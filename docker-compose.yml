@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  challenge:
+    build: .
+    command: >
+        bash -c "python manage.py migrate
+        && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/challenge-alura
+    ports:
+      - "8000:8000"
